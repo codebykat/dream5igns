@@ -6,6 +6,17 @@ gallery
 
 {% block content %}
 <div class="photobox">
+    <div class='photo blurb' id='intro'>
+      <p>dream5igns.net : photos by kat hagan</p>
+      <p>click the images to start</p>
+      <!--p>about this site</p-->
+    </div>
+
+    <div class='photo blurb' id='about'>
+      <p>dream5igns was built using the Flickr API.</p>
+      <p>code is available publically on github.</p>
+    </div>
+
   {% for photo in photos %}
     <div class='photo' id='photo-{{ photo.id }}'>
       <div class='photo-title'>{{ photo.title }}</div>
