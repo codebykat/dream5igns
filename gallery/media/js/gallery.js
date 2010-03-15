@@ -1,7 +1,15 @@
 function setupGallery() {
-  $('div.thumbnail').each( function(i){
+  var thumbs = $('div.thumbnail', $('.thumbs'));
+  thumbs.each( function(i){
     $(this).click(toggleImage);
   });
+
+  // size filmstrip to number of photos
+  var numPhotos = thumbs.size();
+  //var width = thumbs.get(0).width();
+  $('.thumbs').width(numPhotos*83);
+  //console.info(width);
+  //$('.thumbs').css('width',numPhotos*83+'px');
 }
 
 function toggleImage() {
