@@ -7,5 +7,7 @@ urlpatterns = patterns('',
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
                                {'document_root': media_root}),
     (r'mosaic', 'gallery.views.mosaic'),
+    (r'felines', 'gallery.views.felines'),
+    (r'tags', 'gallery.views.tags'),
     (r'', 'gallery.views.index'),
 )

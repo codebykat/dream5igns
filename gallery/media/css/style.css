@@ -3,6 +3,10 @@ body {
   color: #fff;
 }
 
+a img {
+  border: none;
+}
+
 div.pagetitle {
   text-align: center;
 }
