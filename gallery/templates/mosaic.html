@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>notapattern.net : dream5igns</title>
+
+<link rel="stylesheet" type="text/css" href="/site_media/css/style.css"/>
+
+</head>
+<body>
+
+<div class="pagetitle">dream5igns : mosaic view</div>
+
+<div class="mosaic">
+  {% for photo in photos %}
+  <a href="{{ photo.url }}">
+    <div class="thumbnail">
+      <img src="{{ photo.thumbnail }}" />
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<div style="clear:both;height:25px;" />
+</body>
+</html>

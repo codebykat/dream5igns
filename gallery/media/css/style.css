@@ -3,10 +3,47 @@ body {
   color: #fff;
 }
 
+div.pagetitle {
+  text-align: center;
+}
+
 div.photobox {
+  width: 500px;
+  height: 300px;
+  margin: 25px auto;
+  background: #fff;
+}
+
+div.photo {
   display: none;
+}
+
+div.photostrip {
+  position: absolute;
+  bottom: 15px;
+  left: 10%;
+  width: 80%;
+  height: 95px;
+  overflow: auto;
+  background: #F4F4F4;
+  border: solid #AAA;
+}
+
+div.thumbs {
+  position: relative;
+  height: 75px;
+  width: 8000px;
 }
 
 div.thumbnail {
   float: left;
+  border: 1px solid black;
+  width: 75px;
+  height: 75px;
+  margin: 3px;
+}
+
+div.mosaic {
+  margin: 25px auto;
+  width: 80%;
 }

@@ -11,7 +11,7 @@
 
 <div class="photobox">
   {% for photo in photos %}
-    <div class='photo'>
+    <div class='photo' id='photo-{{ photo.id }}'>
       <div class='photo-title'>{{ photo.title }}</div>
       <a href="{{ photo.url }}"
         <img src="{{ photo.src }}"/>
@@ -21,11 +21,13 @@
 </div>
 
 <div class="photostrip">
+  <div class="thumbs">
   {% for photo in photos %}
-    <div class="thumbnail">
+    <div class="thumbnail" id="thumbnail-{{ photo.id }}">
       <img src="{{ photo.thumbnail }}" />
     </div>
   {% endfor %}
+  </div>
 </div>
 
 </body>

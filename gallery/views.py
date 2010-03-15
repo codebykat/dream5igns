@@ -7,3 +7,7 @@ def index(request):
   photos = get_photos()
 
   return render_to_response('index.html', {'photos':photos})
+
+def mosaic(request):
+  photos = get_photos()
+  return render_to_response('mosaic.html', {'photos':photos})
