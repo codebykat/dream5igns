@@ -1,14 +1,10 @@
-<html>
-<head>
-<title>notapattern.net : dream5igns</title>
+{% extends "base.html" %}
 
-<link rel="stylesheet" type="text/css" href="/site_media/css/style.css"/>
+{% block pagetitle %}
+gallery
+{% endblock %}
 
-</head>
-<body>
-
-(covered in beeeeeeeeeees)
-
+{% block content %}
 <div class="photobox">
   {% for photo in photos %}
     <div class='photo' id='photo-{{ photo.id }}'>
@@ -30,5 +26,4 @@
   </div>
 </div>
 
-</body>
-</html>
+{% endblock %}

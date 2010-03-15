@@ -12,14 +12,25 @@ div.pagetitle {
 }
 
 div.photobox {
-  width: 500px;
-  height: 300px;
-  margin: 25px auto;
-  background: #fff;
+  /*position: relative;
+  text-align: center;
+  width: 400px;*/
+  margin: 0 auto;
 }
 
 div.photo {
   display: none;
+  text-align: center;
+  margin-top: 50px;
+}
+
+div.photo img {
+  /*position: relative;
+  background: #fff;
+  color: #000;
+  padding: 0 0 0 25px;*/
+  border: 3px #fff solid;
+  margin-top: 15px;
 }
 
 div.photostrip {
