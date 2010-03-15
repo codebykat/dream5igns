@@ -1,3 +1,32 @@
-(coming soon)
+<html>
+<head>
+<title>notapattern.net : dream5igns</title>
+
+<link rel="stylesheet" type="text/css" href="/site_media/css/style.css"/>
+
+</head>
+<body>
 
 (covered in beeeeeeeeeees)
+
+<div class="photobox">
+  {% for photo in photos %}
+    <div class='photo'>
+      <div class='photo-title'>{{ photo.title }}</div>
+      <a href="{{ photo.url }}"
+        <img src="{{ photo.src }}"/>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<div class="photostrip">
+  {% for photo in photos %}
+    <div class="thumbnail">
+      <img src="{{ photo.thumbnail }}" />
+    </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>

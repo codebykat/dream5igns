@@ -78,6 +78,10 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.admin',
     'dream5igns.gallery',
+    'dream5igns.flickr',
 )
 
 APPEND_SLASH = False
+
+FLICKR_API_KEY = ''
+FLICKR_API_SECRET = ''
