@@ -13,8 +13,8 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),  # django 1.1.1
-    #(r'^admin/', admin.site.root),  # django 1.0.2
+    #(r'^admin/', include(admin.site.urls)),  # django 1.1.1
+    (r'^admin/', admin.site.root),  # django 1.0.2
 
     (r'image_cache/', include('dream5igns.flickr.urls')),
     (r'', include('dream5igns.gallery.urls')),
