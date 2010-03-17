@@ -27,14 +27,18 @@ gallery
   {% endfor %}
 </div>
 
-<div class="photostrip">
-  <div class="thumbs">
-  {% for photo in photos %}
-    <div class="thumbnail" id="thumbnail-{{ photo.id }}">
-      <img src="{{ photo.thumbnail }}" />
+<div class="bottom">
+  <div class="nav" id="navleft"><span>❰</span></div>
+  <div class="photostrip" id="photostrip">
+    <div class="thumbs">
+    {% for photo in photos %}
+      <div class="thumbnail" id="thumbnail-{{ photo.id }}">
+        <img src="{{ photo.thumbnail }}" />
+      </div>
+    {% endfor %}
     </div>
-  {% endfor %}
   </div>
+  <div class="nav" id="navright"><span>❱</span></div>
 </div>
 
 {% endblock %}
