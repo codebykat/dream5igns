@@ -18,7 +18,10 @@ USERNAME = 'example_username'
 #USER_ID = '12345678@N00'
 
 # Comma-separated list of the tags you want to display.
-TAGS = 'tag1,tag2'
+# Leave it empty to display the most recent 100 photos from your photostream.
+# TAGS = 'exampletag'
+# TAGS = 'tag1,tag2'
+TAGS = ''
 
 # Tag mode:
 # - 'any' for an OR combination of tags (default)

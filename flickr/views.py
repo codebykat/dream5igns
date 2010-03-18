@@ -72,12 +72,14 @@ def get_photos(tags=TAGS):
   photos = response["photos"]["photo"]
 
   # load other pages if we need to
-  pgs = response['photos']['pages']
-  for i in range(2, pgs+1):
-    response = json.load(urlopen(url, query+"&page=%s" % i))
-    if response['stat'] != "ok":
-      return []
-    photos.extend(response["photos"]["photo"])
+  # (but only if we have tags, we can't load the whole photostream)
+  if tags != "":
+    pgs = response['photos']['pages']
+    for i in range(2, pgs+1):
+      response = json.load(urlopen(url, query+"&page=%s" % i))
+      if response['stat'] != "ok":
+        return []
+      photos.extend(response["photos"]["photo"])
 
   # update links
   for photo in photos:
