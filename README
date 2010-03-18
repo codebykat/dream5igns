@@ -1,0 +1,9 @@
+Dream5igns is a photo portfolio website built on the Flickr API.  I tag my
+best photos with a Flickr tag, and then dynamically build a gallery to
+showcase just those photos.
+
+First things first: Open up flickr/flickr_settings.py.example, edit it with
+your API key and username (or the username of the photostream you're
+interested in).
+
+Then run it as you would any Django site.

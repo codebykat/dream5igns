@@ -1,0 +1,31 @@
+# To use the Flickr module, add your API key, username, tags, and
+# (optional) user id, and rename this file to flickr_settings.py.
+
+HOST = 'http://api.flickr.com'
+API = '/services/rest'
+
+# Request or look up your keys at: http://www.flickr.com/services/api/keys/
+API_KEY = ''
+
+USERNAME = 'example_username'
+
+# User ID is a string of letters and numbers including an @ sign.
+# You can find it on the right-hand side of this page:
+# http://www.flickr.com/services/api/explore/?method=flickr.people.getInfo
+# This is optional -- it will be slightly faster to include it,
+# but if you leave it commented, the module will make another API call
+# to Flickr to look it up.
+#USER_ID = '12345678@N00'
+
+# Comma-separated list of the tags you want to display.
+TAGS = 'tag1,tag2'
+
+# Tag mode:
+# - 'any' for an OR combination of tags
+# - 'all' for an AND combination.
+TAGMODE = 'any'
+
+# The order in which to sort returned photos.
+# Options: date-posted-asc, date-posted-desc, date-taken-asc, date-taken-desc,
+# interestingness-desc, interestingness-asc, relevance.
+SORT = 'date-taken-desc'
