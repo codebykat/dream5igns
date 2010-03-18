@@ -21,11 +21,12 @@ USERNAME = 'example_username'
 TAGS = 'tag1,tag2'
 
 # Tag mode:
-# - 'any' for an OR combination of tags
+# - 'any' for an OR combination of tags (default)
 # - 'all' for an AND combination.
-TAGMODE = 'any'
+#TAGMODE = 'any'
 
 # The order in which to sort returned photos.
 # Options: date-posted-asc, date-posted-desc, date-taken-asc, date-taken-desc,
 # interestingness-desc, interestingness-asc, relevance.
-SORT = 'date-taken-desc'
+# (default is date-taken-desc)
+#SORT = 'date-taken-desc'

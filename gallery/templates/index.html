@@ -20,6 +20,8 @@ gallery
   {% for photo in photos %}
     <div class='photo' id='photo-{{ photo.id }}'>
       <div class='photo-title'>{{ photo.title }}</div>
+      <div class='photo-date'>{{ photo.datetaken }}</div>
+      <!--div class='photo-description'>{{ photo.description }}</div-->
       <a href="{{ photo.url }}"
         <img src="{{ photo.src }}"/>
       </a>

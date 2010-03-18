@@ -54,7 +54,16 @@ def get_photos(tags=TAGS):
   url = '%s%s' % (HOST, API)
   query = 'user_id=%s&tags=%s&per_page=100' % (userid, tags)
   query += '&api_key=%s&method=%s&format=%s' % (API_KEY, method, "json")
+
+  try:
+    query += '&sort=%s' % SORT
+  except: pass
+  try:
+    query += '&tag_mode=%s' % TAGMODE
+  except: pass
+
   query += '&nojsoncallback=1'
+  query += '&extras=url_sq,url_m,date_taken,description'
 
   response = json.load(urlopen(url, query))
   if response['stat'] != "ok":
@@ -62,6 +71,15 @@ def get_photos(tags=TAGS):
 
   photos = response["photos"]["photo"]
 
+  # load other pages if we need to
+  pgs = response['photos']['pages']
+  for i in range(2, pgs+1):
+    response = json.load(urlopen(url, query+"&page=%s" % i))
+    if response['stat'] != "ok":
+      return []
+    photos.extend(response["photos"]["photo"])
+
+  # update links
   for photo in photos:
     add_photo_links(photo)
     #cache_images(photo)
@@ -69,10 +87,13 @@ def get_photos(tags=TAGS):
   return photos
 
 def add_photo_links(photo):
-  photo['thumbnail'] = "http://farm%s.static.flickr.com/%s/%s_%s_s.jpg" % \
-         (photo['farm'], photo['server'], photo['id'], photo['secret'])
-  photo['src'] = "http://farm%s.static.flickr.com/%s/%s_%s.jpg" % \
-         (photo['farm'], photo['server'], photo['id'], photo['secret'])
+  photo['thumbnail'] = photo['url_sq']
+  photo['src'] = photo['url_m']
+  photo['description'] = photo['description']['_content']
+  #photo['thumbnail'] = "http://farm%s.static.flickr.com/%s/%s_%s_s.jpg" % \
+  #       (photo['farm'], photo['server'], photo['id'], photo['secret'])
+  #photo['src'] = "http://farm%s.static.flickr.com/%s/%s_%s.jpg" % \
+  #       (photo['farm'], photo['server'], photo['id'], photo['secret'])
   photo['url'] = "http://www.flickr.com/photos/%s/%s" % \
                  (USERNAME, photo['id'])
   return
