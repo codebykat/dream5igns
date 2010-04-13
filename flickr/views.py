@@ -84,6 +84,7 @@ def get_photos(tags=TAGS):
   # update links
   for photo in photos:
     add_photo_links(photo)
+    #get_photo_info(photo)
     #cache_images(photo)
 
   return photos
@@ -99,6 +100,26 @@ def add_photo_links(photo):
   photo['url'] = "http://www.flickr.com/photos/%s/%s" % \
                  (USERNAME, photo['id'])
   return
+
+def get_photo_info(photo):
+  try: userid = USER_ID
+  except: userid = get_userid(USERNAME)
+
+  photos = []
+
+  method = 'flickr.photos.getExif'
+
+  url = '%s%s' % (HOST, API)
+  query = 'photo_id=%s' % photo['id']
+  query += '&api_key=%s&method=%s&format=%s' % (API_KEY, method, "json")
+  query += '&nojsoncallback=1'
+
+  response = json.load(urlopen(url, query))
+  #if response['stat'] != "ok":
+  print response
+
+  #photos = response["photos"]["photo"]
+  
 
 def cache_images(photo):
   # TODO separate folders for separate tags

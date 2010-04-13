@@ -12,6 +12,7 @@ div.pagetitle {
 }
 
 div.photobox {
+  width: 80%;
   text-align: center;
   margin: 0 auto;
 }
@@ -26,6 +27,9 @@ div.photo-title {
   font-family: sans-serif;
   font-variant: small-caps;
   font-size: 1.1em;
+}
+
+div.photo-description {
 }
 
 div.blurb {
@@ -45,7 +49,7 @@ div#intro {
 }
 
 div.blurb p {
-  padding: 40px;
+  padding: 15px;
   font-size: 1.3em;
   font-family: sans-serif;
 }

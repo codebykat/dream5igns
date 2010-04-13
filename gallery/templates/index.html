@@ -5,34 +5,39 @@ gallery
 {% endblock %}
 
 {% block content %}
-<div class="photobox">
+<div class="photobox" id="photobox">
+    <!--div class="nav" id="photo-prev"><span>❰</span></div-->
+
     <div class='photo blurb' id='intro'>
       <p>dream5igns.net : photos by kat hagan</p>
       <p>click the images to start</p>
-      <!--p>about this site</p-->
+      <p><span id="aboutlink" class="link">about this site</span></p>
+      <p>email me: kat@dream5igns.net</p>
     </div>
 
     <div class='photo blurb' id='about'>
       <p>dream5igns was built using Django, JQuery and the Flickr API.</p>
-      <p>code is available publically on github.</p>
+      <p>code is available on <a href="http://github.com/codebykat/dream5igns">github</a>.</p>
     </div>
 
   {% for photo in photos %}
     <div class='photo' id='photo-{{ photo.id }}'>
       <div class='photo-title'>{{ photo.title }}</div>
       <div class='photo-date'>{{ photo.datetaken }}</div>
-      <!--div class='photo-description'>{{ photo.description }}</div-->
-      <a href="{{ photo.url }}"
-        <img src="{{ photo.src }}"/>
-      </a>
+      <div class='photo-description'>{{ photo.description }}</div>
+      <div class='photo-link'>
+        <a href="{{ photo.url }}">view on Flickr</a>
+      </div>
+      <img src="{{ photo.src }}"/>
     </div>
   {% endfor %}
+  <!--div class="nav" id="photo-next"><span>❱</span></div-->
 </div>
 
 <div class="bottom">
-  <div class="nav" id="navleft"><span>❰</span></div>
+  <div class="nav" id="scroll-left"><span>❰</span></div>
   <div class="photostrip" id="photostrip">
-    <div class="thumbs">
+    <div class="thumbs" id="thumbs">
     {% for photo in photos %}
       <div class="thumbnail" id="thumbnail-{{ photo.id }}">
         <img src="{{ photo.thumbnail }}" />
@@ -40,7 +45,7 @@ gallery
     {% endfor %}
     </div>
   </div>
-  <div class="nav" id="navright"><span>❱</span></div>
+  <div class="nav" id="scroll-right"><span>❱</span></div>
 </div>
 
 {% endblock %}
